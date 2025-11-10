@@ -1,21 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 
-
 const ScoreGauge = ({ score = 75 }: { score: number }) => {
-    const [pathLength, setPathLength] = useState(0);
-    const pathRef = useRef<SVGPathElement>(null);
+  const [pathLength, setPathLength] = useState(0);
+  const pathRef = useRef<SVGPathElement>(null);
 
-    const percentage = score / 100;
+  const percentage = score / 100;
 
-    useEffect(() => {
-        if (pathRef.current) {
-            setPathLength(pathRef.current.getTotalLength());
-        }
-    }, []);
+  useEffect(() => {
+    if (pathRef.current) {
+      setPathLength(pathRef.current.getTotalLength());
+    }
+  }, []);
 
-
-    return (
-      <div className="flex flex-col items-center">
+  return (
+    <div className="flex flex-col items-center">
       <div className="relative w-40 h-20">
         <svg viewBox="0 0 100 50" className="w-full h-full">
           <defs>
@@ -58,7 +56,7 @@ const ScoreGauge = ({ score = 75 }: { score: number }) => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default ScoreGauge;

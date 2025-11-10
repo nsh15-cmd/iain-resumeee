@@ -36,7 +36,7 @@ main {
 }
 h1 {
   @apply text-6xl font-semibold leading-tight tracking-[-2px] text-transparent bg-clip-text;
-  background-image: linear-gradient(90deg, #AD016E 0%, #FFFFFF 50%, #5A3CC8 100%);
+  background-image: linear-gradient(90deg, #72124f 0%, #FFFFFF 50%, #5A3CC8 100%);
 }
 
 h2 {
@@ -60,7 +60,7 @@ form {
 
 @layer components {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] via-[#000000] to-[#8E97C5];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#72124f] via-[#000000] to-[#8E97C5];
   }
   .gradient-border {
     @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200 p-4 rounded-2xl;
@@ -111,9 +111,27 @@ form {
     @apply flex flex-col gap-8 w-1/2 px-8 max-lg:w-full py-6;
   }
 
-  .navbar {
-    @apply flex flex-row justify-between items-center bg-white rounded-full p-4 w-full px-10 max-w-[1200px] mx-auto;
-  }
+.navbar {
+  /* --- Positioning --- */
+  @apply fixed top-4 left-0 right-0 z-30;
+
+  /* --- Sizing & Centering --- */
+  @apply w-400 mx-auto; /* w-auto makes it "fit" its content */
+
+  /* --- Flex Layout --- */
+  @apply flex items-center justify-between gap-4;
+
+  /* --- Pill Shape & Padding --- */
+  @apply rounded-full px-6 py-3;
+
+  /* --- The "Pretty" Glass Effect --- */
+  @apply bg-white/70 backdrop-blur-lg;
+  @apply shadow-xl shadow-black/10;
+  @apply border border-white/20;
+
+  /* --- Dark Mode --- */
+  @apply dark:bg-gray-900/70 dark:border-gray-700;
+}
 
   .score-badge {
     @apply flex flex-row items-center justify-center py-1 px-2 gap-4 rounded-[96px];
@@ -136,7 +154,7 @@ form {
 }
 
 @utility text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] via-[#000000] to-[#8E97C5];
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#72124f] via-[#ffffff] to-[#4e14cb];
 }
 
 @utility gradient-hover {

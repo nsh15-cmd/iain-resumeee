@@ -12,7 +12,13 @@ interface Resume {
   imagePath: string;
   resumePath: string;
   feedback: Feedback;
+  isArchived?: boolean;
 }
+
+export type KVItem = {
+  key: string;
+  value: string;
+};
 
 interface Feedback {
   overallScore: number;
